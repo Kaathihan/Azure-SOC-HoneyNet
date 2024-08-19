@@ -4,7 +4,7 @@
 -->
 ## Introduction
 
-In this project, I developed a mini honeynet within Azure, integrating log sources from various resources into a Log Analytics workspace. This setup was utilized by Microsoft Sentinel to generate attack maps, trigger alerts, and manage incidents. Initially, I measured security metrics in an unsecured environment for 24 hours. After implementing security controls to harden the environment, I measured the metrics again for another 24 hours. Below are the key metrics:
+In this project, I developed a mini honeynet within Azure, integrating log sources from various resources into a Log Analytics workspace. This setup was utilized by Microsoft Sentinel to generate attack maps, trigger alerts, and manage incidents. Initially, I measured security metrics in an unsecured environment for 72 hours. After implementing security controls to harden the environment, I measured the metrics again for another 72 hours. Below are the key metrics:
 
 
 - SecurityEvent (Windows Event Logs)
@@ -33,9 +33,11 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Microsoft Sentinel
 
 For the "Before Hardening" Configuration:
+
 All resources were deliberately exposed to the internet to simulate an vulnerable environment. Virtual Machines were configured with open Network Security Groups and disabled built-in firewalls. Other Azure resources were deployed with public endpoints, making them directly accessible from the internet without the protection of Private Endpoints..
 
 For the "After Hardening" Configuration:
+
 Network Security Groups were configured to block all inbound traffic, with the sole exception of connections from a designated admin workstation. Additionally, we leveraged the built-in firewalls of each resource and implemented Private Endpoints, effectively isolating the resources from direct internet exposure and significantly reducing the attack surface.
 
 ## Attack Maps Before Hardening / Security Controls
@@ -47,9 +49,10 @@ Network Security Groups were configured to block all inbound traffic, with the s
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2024-08-01 17:59:36
-Stop Time 2024-08-04 17:59:36
+The following table shows the metrics we measured in our insecure environment for 72 hours:
+<br />
+`Start Time: 2024-08-01 17:59:36` <br/>
+`Stop Time: 2024-08-04 17:59:36`
 
 | Metric                   | Count
 | ------------------------ | -----
@@ -61,23 +64,23 @@ Stop Time 2024-08-04 17:59:36
 
 ## Attack Maps Before Hardening / Security Controls
 
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+```All map queries actually returned no results due to no instances of malicious activity for the 72 hour period after hardening.```
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-<!--
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+The following table shows the metrics we measured in our environment for another 72 hours, but after we have applied security controls:
+<br />
+`Start Time: 2024-08-04 21:32:47` <br/>
+`Stop Time: 2024-08-07 21:32:47`
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
+| SecurityEvent            | 8976
+| Syslog                   | 23
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
--->
+
 ## Conclusion
 
 In this project, a mini honeynet was deployed in Microsoft Azure, with log sources integrated into a Log Analytics workspace. Microsoft Sentinel was utilized to generate alerts and incidents based on these logs. Initially, metrics were captured in the insecure environment, highlighting vulnerabilities. After implementing security controls, a significant reduction in security events and incidents was observed, demonstrating the effectiveness of these measures.
