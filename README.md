@@ -32,11 +32,11 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "Before Hardening" Configuration:
+`For the "Before Hardening" Configuration:`
 
 All resources were deliberately exposed to the internet to simulate an vulnerable environment. Virtual Machines were configured with open Network Security Groups and disabled built-in firewalls. Other Azure resources were deployed with public endpoints, making them directly accessible from the internet without the protection of Private Endpoints..
 
-For the "After Hardening" Configuration:
+`For the "After Hardening" Configuration:`
 
 Network Security Groups were configured to block all inbound traffic, with the sole exception of connections from a designated admin workstation. Additionally, we leveraged the built-in firewalls of each resource and implemented Private Endpoints, effectively isolating the resources from direct internet exposure and significantly reducing the attack surface.
 
