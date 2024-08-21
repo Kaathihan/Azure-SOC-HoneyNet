@@ -4,7 +4,7 @@
 -->
 ## Introduction
 
-In this project, I developed a mini honeynet within Azure, integrating log sources from various resources into a Log Analytics workspace. This setup was utilized by Microsoft Sentinel to generate attack maps, trigger alerts, and manage incidents. Initially, I measured security metrics in an unsecured environment for 72 hours. After implementing security controls to harden the environment, I measured the metrics again for another 72 hours. Below are the key metrics:
+In this project, I developed a mini honeynet within Azure, integrating log sources from various resources into a Log Analytics workspace. This setup was utilized by Microsoft Sentinel to generate attack maps, trigger alerts, and manage incidents. Initially, I measured security metrics in an unsecured environment for 24 hours. After implementing security controls to harden the environment, I measured the metrics again for another 24 hours. Below are the key metrics:
 
 
 - SecurityEvent (Windows Event Logs)
@@ -49,29 +49,29 @@ Network Security Groups were configured to block all inbound traffic, with the s
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 72 hours:
+The following table shows the metrics we measured in our insecure environment for 24 hours:
 <br />
 `Start Time: 2024-08-01 17:59:36` <br/>
-`Stop Time: 2024-08-04 17:59:36`
+`Stop Time: 2024-08-02 17:59:36`
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 438278
-| Syslog                   | 29286
-| SecurityAlert            | 11
-| SecurityIncident         | 789
+| SecurityEvent            | 82508
+| Syslog                   | 10345
+| SecurityAlert            | 4
+| SecurityIncident         | 271
 | AzureNetworkAnalytics_CL | 490
 
 ## Attack Maps Before Hardening / Security Controls
 
-```All map queries actually returned no results due to no instances of malicious activity for the 72 hour period after hardening.```
+```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 72 hours, but after we have applied security controls:
+The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
 <br />
-`Start Time: 2024-08-04 21:32:47` <br/>
-`Stop Time: 2024-08-07 21:32:47`
+`Start Time: 2024-08-20 19:02:04` <br/>
+`Stop Time: 2024-08-21 19:02:04`
 
 | Metric                   | Count
 | ------------------------ | -----
