@@ -14,14 +14,13 @@ In this project, I developed a mini honeynet within Azure, integrating log sourc
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-<!--
-![Architecture Diagram]()
--->
+
+![github2](https://github.com/user-attachments/assets/5854a52d-be09-42b1-a4db-ac35f1a6d641)
 
 ## Architecture After Hardening / Security Controls
-<!--
-![Architecture Diagram]()
--->
+
+![github3](https://github.com/user-attachments/assets/6ad56273-b8aa-45d3-8b54-2b57025ed998)
+
 The architecture of the mini honeynet in Azure consists of the following components:
 
 - Virtual Network (VNet)
